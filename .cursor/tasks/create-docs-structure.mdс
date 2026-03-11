@@ -1,0 +1,151 @@
+```md
+# Task: Создать каркас документации Docusaurus для ARS Wiki
+
+## Контекст проекта
+
+Мы используем Docusaurus v2 для wiki по аппаратным продуктам ARS Electronic  
+(процессорные SOM‑модули и несущие платы).  
+Файл `sidebars.ts` уже настроен и использует автогенерацию из директорий:
+
+- `getting-started`
+- `modules`
+- `carrier-boards`
+- `software-guides`
+- `troubleshooting`
+
+Нужно создать файловую и базовую Markdown‑структуру под эту архитектуру.
+
+## Цели
+
+1. Создать папки и пустые/шаблонные `.md`‑файлы в `docs/` согласно описанной ниже структуре.
+2. В каждый файл добавить минимальный front matter (`id`, `title`, `sidebar_label`) и один‑два заголовка, чтобы документация собиралась без ошибок.
+3. Не менять существующий `sidebars.ts` (считай, что он уже скопирован и корректен).
+
+## Требования к структуре
+
+Создать структуру внутри каталога `docs/`:
+
+```text
+docs/
+  intro.md
+
+  getting-started/
+    index.md
+    kit-ars-sm-rk3588-base.md
+    kit-ars-sm-rk3588-extended.md
+
+  modules/
+    _category_.json
+    ars-sm-rk3588/
+      index.md
+      hardware.md
+      pinout.md
+      design-guide.md
+      resources.md
+    # оставь понятный пример, другие модули разработчики смогут копировать по этому паттерну
+
+  carrier-boards/
+    _category_.json
+    ars-cb-rk3588-base/
+      index.md
+      hardware.md
+      schematics-notes.md
+      assembly.md
+      resources.md
+
+  software-guides/
+    index.md
+    os-images/
+      rk3588-linux.md
+      rk3588-android.md
+    flashing/
+      flash-sdcard.md
+      update-firmware.md
+    development/
+      setup-sdk.md
+      gpio-uart-can-examples.md
+
+  troubleshooting/
+    index.md
+    power-issues.md
+    boot-issues.md
+    peripherals-issues.md
+```
+
+## Требования к содержимому файлов
+
+Для каждого файла:
+
+- Вверху добавить front matter в формате:
+
+  ```md
+  ---
+  id: <уникальный-id>
+  title: <Читаемый заголовок>
+  sidebar_label: <Короткий ярлык в сайдбаре>
+  ---
+  ```
+
+- После front matter добавить хотя бы один заголовок второго уровня `##`  
+  и короткий комментарий‑заглушку, например:
+
+  ```md
+  ## Overview
+
+  TODO: заполнить документацию для данного раздела.
+  ```
+
+### Конкретные примеры
+
+Используй такие значения по умолчанию (остальные по аналогии):
+
+`docs/intro.md`:
+
+```md
+***
+id: intro
+title: Обзор продуктов ARS Electronic
+sidebar_label: Обзор
+***
+
+## Обзор
+
+TODO: краткое описание линейки SOM и несущих плат.
+```
+
+`docs/modules/ars-sm-rk3588/index.md`:
+
+```md
+***
+id: ars-sm-rk3588
+title: Процессорный модуль ARS-SM-RK3588
+sidebar_label: ARS-SM-RK3588
+***
+
+## Обзор модуля
+
+TODO: краткое описание модуля, ключевые особенности и области применения.
+```
+
+`docs/carrier-boards/ars-cb-rk3588-base/index.md`:
+
+```md
+***
+id: ars-cb-rk3588-base
+title: Несущая плата ARS-CB-RK3588 Base
+sidebar_label: ARS-CB-RK3588 Base
+***
+
+## Обзор платы
+
+TODO: назначение платы, совместимые SOM и основные интерфейсы.
+```
+
+Остальные файлы можно заполнять по аналогии с кратким `TODO`‑описанием того, что в них должно быть (hardware spec, design guide, flashing, troubleshooting и т.п.).
+
+## Ограничения
+
+- Не изменяй `docusaurus.config.*` и `sidebars.ts`.
+- Не удаляй существующие файлы в `docs/`, только дополняй.
+- Следи, чтобы пути и регистр директорий точно соответствовали структуре выше.
+```
