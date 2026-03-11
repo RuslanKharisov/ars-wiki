@@ -1,0 +1,195 @@
+---
+alwaysApply: true
+---
+
+
+```md
+# Task: Настроить docusaurus.config.ts под ARS Electronic Wiki
+
+## Контекст
+
+Сейчас `docusaurus.config.ts` — стандартный шаблон Docusaurus с тестовыми значениями  
+(`My Site`, `Dinosaurs are cool`, блог, ссылки на facebook/docusaurus и т.п.).
+
+Нужно привести конфиг к рабочему состоянию для внутренней/публичной документации ARS Electronic:
+
+- сайт только про документацию (docs-only, без блога),
+- основная локаль — русский,
+- бренд и ссылки — ARS Electronic,
+- навбар/футер минималистичные и заточены под wiki.
+
+## Цели
+
+1. Обновить общие поля (title, tagline, url, i18n).
+2. Отключить блог и убрать все упоминания блога из конфига.
+3. Настроить docs-плагин и навбар так, чтобы главная точка входа — `/docs/intro`.
+4. Обновить футер и метаданные под ARS Electronic.
+
+## Требования к изменениям
+
+В существующем `docusaurus.config.ts`:
+
+### 1. Общие настройки сайта
+
+- Заменить:
+
+  ```ts
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
+  ```
+
+  на что‑то в этом духе (можешь подобрать формулировку сам, но на русском):
+
+  ```ts
+  title: 'ARS Electronic Wiki',
+  tagline: 'Документация по SOM-модулям и несущим платам ARS',
+  ```
+
+- Поля `url` и `baseUrl` подготовить под будущий продакшн (пока можно оставить заглушки, но более реалистичные):
+
+  ```ts
+  url: 'https://wiki.arselectronic.ru',
+  baseUrl: '/',
+  ```
+
+- `organizationName` и `projectName` заменить на что‑то нейтральное (если не используем docusaurus deploy, можно поставить свои значения):
+
+  ```ts
+  organizationName: 'arselectronic',
+  projectName: 'ars-wiki',
+  ```
+
+### 2. i18n (локаль ru)
+
+- В блоке `i18n` сделать русский языком по умолчанию:
+
+  ```ts
+  i18n: {
+    defaultLocale: 'ru',
+    locales: ['ru'],
+  },
+  ```
+
+  Ничего сложнее (мульти‑язычность) пока не настраивать.
+
+### 3. Presets: docs-only, без блога
+
+- В массиве `presets` оставить только `docs` и `theme`, блог отключить:
+
+  ```ts
+  presets: [
+    [
+      'classic',
+      {
+        docs: {
+          sidebarPath: './sidebars.ts',
+          routeBasePath: '/docs',
+          editUrl: undefined, // пока не показываем "edit this page"
+        },
+        blog: false,
+        theme: {
+          customCss: './src/css/custom.css',
+        },
+      } satisfies Preset.Options,
+    ],
+  ],
+  ```
+
+- Убедиться, что нигде больше нет ссылок на `blog`‑маршруты.
+
+### 4. Navbar
+
+- В `themeConfig.navbar`:
+
+  - Заменить `title` и `logo.alt`/`logo.src` на значения для ARS (если логотипа ещё нет — оставить `img/logo.svg`, но название поправить):
+
+    ```ts
+    navbar: {
+      title: 'ARS Electronic Wiki',
+      logo: {
+        alt: 'ARS Electronic',
+        src: 'img/logo.svg',
+      },
+      items: [
+        {
+          type: 'docSidebar',
+          sidebarId: 'tutorialSidebar',
+          position: 'left',
+          label: 'Документация',
+        },
+        {
+          href: 'https://arselectronic.ru/store',
+          label: 'Магазин',
+          position: 'right',
+        },
+        {
+          href: 'https://arselectronic.ru',
+          label: 'Главный сайт',
+          position: 'right',
+        },
+      ],
+    },
+    ```
+
+  - Полностью убрать пункт `{to: '/blog', ...}` и ссылки на GitHub docusaurus по умолчанию (при необходимости можно оставить один GitHub‑линк на реальный репозиторий, если он уже есть).
+
+### 5. Footer
+
+- В `themeConfig.footer`:
+
+  - Обновить блок `Docs`:
+
+    ```ts
+    {
+      title: 'Документация',
+      items: [
+        {
+          label: 'Введение',
+          to: '/docs/intro',
+        },
+      ],
+    },
+    ```
+
+  - Блок `Community` упростить или временно убрать (если нет публичного сообщества).
+
+  - Блок `More` настроить на реальные ссылки:
+
+    ```ts
+    {
+      title: 'Ещё',
+      items: [
+        {
+          label: 'ARS Electronic',
+          href: 'https://arselectronic.ru',
+        },
+        {
+          label: 'Магазин',
+          href: 'https://arselectronic.ru/store',
+        },
+      ],
+    },
+    ```
+
+  - `copyright`:
+
+    ```ts
+    copyright: `© ${new Date().getFullYear()} ARS Electronic. Документация по продуктам SOM и несущим платам.`,
+    ```
+
+### 6. Прочее
+
+- Поле `image` в `themeConfig` можно обновить на что‑то нейтральное (или оставить как есть, но желательно заменить, когда появится своя social‑card):
+
+  ```ts
+  image: 'img/ars-wiki-social-card.jpg', // можно оставить TODO-комментарий
+  ```
+
+- Убедиться, что настройки `prism` оставлены как есть (github/dracula) — менять их необязательно.
+
+## Ограничения
+
+- Не трогать файловую структуру проекта.
+- Сохранить `future: { v4: true }` как есть.
+- После изменений запустить `npm run build` и убедиться, что сборка проходит, маршруты `/docs/intro` и `/docs/modules/...` доступны.
+```
