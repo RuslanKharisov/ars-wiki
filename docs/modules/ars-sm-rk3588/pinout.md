@@ -1,14 +1,14 @@
 ---
 id: ars-sm-rk3588-pinout
 title: Распиновка и сигналы
-sidebar_label: Pinout
+sidebar_label: Распиновка и сигналы
 ---
 
 ## Общие сведения о разъёме
 
 - **Форм‑фактор**: SMARC (SMARC 2.x — в даташите указано «SMARC», версия стандарта не уточнена).
 - **Тип и количество контактов, а также разбиение на Connector A/B** в данном даташите **не приведены**.
-TODO: подтвердить точный стандарт (SMARC 2.0/2.1), тип разъёма и количество пинов по mechanical drawing или отдельному pin assignment документу.
+  TODO: подтвердить точный стандарт (SMARC 2.0/2.1), тип разъёма и количество пинов по mechanical drawing или отдельному pin assignment документу.
 
 ## Таблица выводов
 
@@ -16,9 +16,9 @@ TODO: подтвердить точный стандарт (SMARC 2.0/2.1), ти
 
 TODO: добавить таблицы по Connector A/B (или иным обозначениям) после получения pin assignment:
 
-| Pin | Signal | I/O | Voltage | Description |
-| --- | ------ | --- | ------- | ----------- |
-| TODO | TODO | TODO | TODO | TODO |
+| Pin  | Signal | I/O  | Voltage | Description |
+| ---- | ------ | ---- | ------- | ----------- |
+| TODO | TODO   | TODO | TODO    | TODO        |
 
 ## Группы сигналов
 

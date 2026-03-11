@@ -2,8 +2,7 @@
 alwaysApply: true
 ---
 
-
-```md
+````md
 # Task: Настроить docusaurus.config.ts под ARS Electronic Wiki
 
 ## Контекст
@@ -37,13 +36,14 @@ alwaysApply: true
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   ```
+````
 
-  на что‑то в этом духе (можешь подобрать формулировку сам, но на русском):
+на что‑то в этом духе (можешь подобрать формулировку сам, но на русском):
 
-  ```ts
-  title: 'ARS Electronic Wiki',
-  tagline: 'Документация по SOM-модулям и несущим платам ARS',
-  ```
+```ts
+title: 'ARS Electronic Wiki',
+tagline: 'Документация по SOM-модулям и несущим платам ARS',
+```
 
 - Поля `url` и `baseUrl` подготовить под будущий продакшн (пока можно оставить заглушки, но более реалистичные):
 
@@ -100,7 +100,6 @@ alwaysApply: true
 ### 4. Navbar
 
 - В `themeConfig.navbar`:
-
   - Заменить `title` и `logo.alt`/`logo.src` на значения для ARS (если логотипа ещё нет — оставить `img/logo.svg`, но название поправить):
 
     ```ts
@@ -119,7 +118,7 @@ alwaysApply: true
         },
         {
           href: 'https://arselectronic.ru/store',
-          label: 'Магазин',
+          label: 'Католог',
           position: 'right',
         },
         {
@@ -136,7 +135,6 @@ alwaysApply: true
 ### 5. Footer
 
 - В `themeConfig.footer`:
-
   - Обновить блок `Docs`:
 
     ```ts
@@ -164,7 +162,7 @@ alwaysApply: true
           href: 'https://arselectronic.ru',
         },
         {
-          label: 'Магазин',
+          label: 'Католог',
           href: 'https://arselectronic.ru/store',
         },
       ],
@@ -192,4 +190,7 @@ alwaysApply: true
 - Не трогать файловую структуру проекта.
 - Сохранить `future: { v4: true }` как есть.
 - После изменений запустить `npm run build` и убедиться, что сборка проходит, маршруты `/docs/intro` и `/docs/modules/...` доступны.
+
+```
+
 ```

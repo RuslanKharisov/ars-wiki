@@ -1,9 +1,9 @@
 ---
 id: troubleshooting
-title: Troubleshooting
-sidebar_label: Troubleshooting
+title: Поиск и устранение неисправностей
+sidebar_label: Поиск и устранение неисправностей
 ---
 
-## Overview
+## Обзор
 
 TODO: типовые проблемы, быстрые проверки и ссылки на разделы ниже.

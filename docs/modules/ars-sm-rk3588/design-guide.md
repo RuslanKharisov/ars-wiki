@@ -1,7 +1,7 @@
 ---
 id: ars-sm-rk3588-design-guide
-title: Design guide
-sidebar_label: Design guide
+title: Руководство по проектированию
+sidebar_label: Руководство по проектированию
 ---
 
 ## Общие рекомендации по встраиванию модуля

@@ -4,6 +4,6 @@ title: Набор ARS-SM-RK3588 Base
 sidebar_label: KIT Base
 ---
 
-## Overview
+## Обзор
 
 TODO: состав набора, требуемое питание, базовые подключения и первый старт.

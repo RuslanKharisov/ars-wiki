@@ -1,7 +1,7 @@
 ---
 id: ars-sm-rk3588-hardware
 title: Аппаратные характеристики
-sidebar_label: Hardware
+sidebar_label: Аппаратная конфигурация
 ---
 
 ## Аппаратная конфигурация

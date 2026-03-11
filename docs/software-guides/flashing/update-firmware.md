@@ -1,9 +1,9 @@
 ---
 id: update-firmware
-title: Обновление firmware / загрузчика
-sidebar_label: Update firmware
+title: Обновление прошивки / загрузчика
+sidebar_label: Обновление прошивки
 ---
 
-## Overview
+## Обзор
 
 TODO: варианты обновления (SD/USB/через ОС), меры предосторожности и восстановление после неудачной прошивки.

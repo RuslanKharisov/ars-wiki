@@ -1,9 +1,9 @@
 ---
 id: getting-started
-title: Getting started
-sidebar_label: Getting started
+title: Быстрый старт
+sidebar_label: Быстрый старт
 ---
 
-## Overview
+## Обзор
 
 TODO: базовые шаги для старта работы с наборами ARS (питание, подключение, первый запуск).

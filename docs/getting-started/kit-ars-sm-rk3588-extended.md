@@ -4,6 +4,6 @@ title: Набор ARS-SM-RK3588 Extended
 sidebar_label: KIT Extended
 ---
 
-## Overview
+## Обзор
 
 TODO: отличия Extended от Base, состав набора и рекомендации по первому запуску.

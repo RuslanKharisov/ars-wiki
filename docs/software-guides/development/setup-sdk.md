@@ -1,9 +1,9 @@
 ---
 id: setup-sdk
-title: Настройка SDK / toolchain
-sidebar_label: Setup SDK
+title: Настройка SDK и toolchain
+sidebar_label: Настройка SDK
 ---
 
-## Overview
+## Обзор
 
 TODO: установка toolchain/SDK, переменные окружения, сборка примеров и проверка окружения.

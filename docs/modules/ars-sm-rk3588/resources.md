@@ -1,7 +1,7 @@
 ---
 id: ars-sm-rk3588-resources
 title: Ресурсы и файлы
-sidebar_label: Resources
+sidebar_label: Ресурсы и файлы
 ---
 
 ## Документация

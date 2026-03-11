@@ -1,9 +1,9 @@
 ---
 id: flash-sdcard
 title: Прошивка на SD-карту
-sidebar_label: Flash SD-card
+sidebar_label: Прошивка на SD-карту
 ---
 
-## Overview
+## Обзор
 
 TODO: подготовка SD (Windows/Linux), выбор утилиты, запись образа, проверка и первый запуск.
