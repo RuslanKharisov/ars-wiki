@@ -38,8 +38,3 @@ jobs:
             -e "ssh -o StrictHostKeyChecking=no" \
             ./build/ \
             ${{ secrets.SERVER_USER }}@${{ secrets.REMOTE_HOST }}:~/ars-wiki-static/
-
-      - name: Verify Nginx (Optional)
-        run: |
-          # Проверка конфига Nginx после деплоя (по желанию)
-          ssh -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.REMOTE_HOST }} "sudo nginx -t"
