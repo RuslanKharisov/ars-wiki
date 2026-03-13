@@ -13,9 +13,8 @@ const config: Config = {
   },
 
   // Основной URL сайта
-  url: "https://arselectronic.ru",
-  // Путь, по которому будет доступна вики. Обязательно со слешами с двух сторон.
-  baseUrl: "/wiki/",
+  url: "https://wiki.arselectronic.ru",
+  baseUrl: "/",
 
   // Конфигурация для GitHub Pages (не используется для VPS, но оставлено для структуры)
   organizationName: "arselectronic",
