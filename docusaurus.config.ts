@@ -88,7 +88,7 @@ const config: Config = {
           items: [
             {
               label: "Введение",
-              to: "/intro", // Теперь без префикса /docs
+              to: "/intro",
             },
           ],
         },
