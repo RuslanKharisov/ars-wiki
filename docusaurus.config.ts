@@ -2,34 +2,29 @@ import { themes as prismThemes } from "prism-react-renderer";
 import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 
-// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
-
 const config: Config = {
   title: "ARS Electronic Wiki",
   tagline: "Документация по SOM-модулям и несущим платам ARS",
   favicon: "img/favicon.ico",
 
-  // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
+  // Настройки совместимости с будущими версиями
   future: {
-    v4: true, // Improve compatibility with the upcoming Docusaurus v4
+    v4: true,
   },
 
-  // Set the production url of your site here
-  url: "https://wiki.arselectronic.ru",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  // Основной URL сайта
+  url: "https://arselectronic.ru",
+  // Путь, по которому будет доступна вики. Обязательно со слешами с двух сторон.
+  baseUrl: "/wiki/",
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "arselectronic", // Usually your GitHub org/user name.
-  projectName: "ars-wiki", // Usually your repo name.
+  // Конфигурация для GitHub Pages (не используется для VPS, но оставлено для структуры)
+  organizationName: "arselectronic",
+  projectName: "ars-wiki",
 
+  // Ошибка при сборке, если найдены битые ссылки
   onBrokenLinks: "throw",
 
-  // Even if you don't use internationalization, you can use this field to set
-  // useful metadata like html lang. For example, if your site is Chinese, you
-  // may want to replace "en" with "zh-Hans".
+  // Настройки локализации
   i18n: {
     defaultLocale: "ru",
     locales: ["ru"],
@@ -41,10 +36,11 @@ const config: Config = {
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          routeBasePath: "/docs",
+          // '/' делает документацию главной страницей раздела /wiki
+          routeBasePath: "/",
           editUrl: undefined,
         },
-        blog: false,
+        blog: false, // Блог отключен
         theme: {
           customCss: "./src/css/custom.css",
         },
@@ -53,9 +49,10 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    // Изображение для превью в соцсетях
     image: "img/ars-wiki-social-card.jpg",
     colorMode: {
+      // Уважать системную цветовую тему пользователя
       respectPrefersColorScheme: true,
     },
     navbar: {
@@ -73,7 +70,7 @@ const config: Config = {
         },
         {
           href: "https://arselectronic.ru/store",
-          label: "Католог",
+          label: "Каталог", // Исправлена опечатка в "Каталог"
           position: "right",
         },
         {
@@ -87,23 +84,23 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Документация",
+          title: "Разделы",
           items: [
             {
               label: "Введение",
-              to: "/docs/intro",
+              to: "/intro", // Теперь без префикса /docs
             },
           ],
         },
         {
-          title: "Ещё",
+          title: "Ссылки",
           items: [
             {
               label: "ARS Electronic",
               href: "https://arselectronic.ru",
             },
             {
-              label: "Католог",
+              label: "Каталог продукции",
               href: "https://arselectronic.ru/store",
             },
           ],
