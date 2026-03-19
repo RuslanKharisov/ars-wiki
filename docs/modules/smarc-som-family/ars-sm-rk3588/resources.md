@@ -6,7 +6,7 @@ sidebar_label: Ресурсы и файлы
 
 ## Документация
 
-- Даташит модуля (PDF в репозитории): [`docs/_sources/datasheet_RK3588_SMARC-2.pdf`](../../_sources/datasheet_RK3588_SMARC-2.pdf)
+- Даташит модуля (PDF в репозитории): [`/datasheets/datasheet_RK3588_SMARC-2.pdf`](/datasheets/datasheet_RK3588_SMARC-2.pdf)
 
 В текущем PDF не перечислены отдельные приложения (pin assignment, mechanical drawing, design guide, схемы).
 TODO: добавить ссылки на дополнительные документы (pinout, mechanical, reference carrier board), если они доступны.

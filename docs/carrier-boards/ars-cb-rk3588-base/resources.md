@@ -6,7 +6,7 @@ sidebar_label: Resources
 
 ## Документация
 
-- Datasheet несущей платы RK3588: `datasheet_IB_SM_RK_compressed.pdf` (см. каталог `docs/_sources`).
+- Datasheet несущей платы RK3588: [`datasheet_IB_SM_RK_compressed.pdf`](/datasheets/datasheet_IB_SM_RK_compressed.pdf).
 
 TODO: добавить ссылку на схемы/референс‑дизайн/механику, если они упоминаются в отдельных документах.
 
