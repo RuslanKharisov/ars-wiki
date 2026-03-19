@@ -2,7 +2,7 @@
 alwaysApply: true
 ---
 
-```md
+````md
 # Task: Сформировать pinout-таблицы для RK3588 carrier board из даташита
 
 ## Контекст
@@ -18,7 +18,7 @@ alwaysApply: true
 
 Файл даташита сохранён локально:
 
-- `docs/_sources/datasheet_IB_SM_RK_compressed.pdf`  ← при необходимости обнови путь.
+- `static/datasheet/datasheet_IB_SM_RK_compressed.pdf` ← при необходимости обнови путь.
 
 Нужно извлечь данные из этого PDF и аккуратно оформить их в Markdown-таблицы.
 
@@ -27,7 +27,6 @@ alwaysApply: true
 1. Прочитать `datasheet_IB_SM_RK_compressed.pdf` и найти раздел(ы) с таблицами P-Pin (P1, P2, …) и аналогичными списками выводов для SOM / SMARC-коннектора.
 2. Преобразовать эти данные в структурированные таблицы для документации.
 3. Заполнить черновым содержимым файлы:
-
    - `docs/carrier-boards/ars-cb-rk3588-base/hardware.md` — краткое описание групп сигналов.
    - `docs/carrier-boards/ars-cb-rk3588-base/schematics-notes.md` — пояснения по группам линий и примечания.
    - `docs/carrier-boards/ars-cb-rk3588-base/resources.md` — ссылка на этот даташит как источник pinout.
@@ -49,16 +48,17 @@ alwaysApply: true
 
 Ниже приведены сигналы разъёма P (carrier board) в соответствии с даташитом.
 ```
+````
 
 Далее сформируй одну или несколько таблиц вида:
 
 ```md
-| P-Pin | SMARC Signal        | Board Net / Function      | RK3588 Ball | Voltage Domain | Notes        |
-| ----- | ------------------- | ------------------------- | ----------- | -------------- | ------------ |
-| P1    | SMB_ALERT#          | Test Point                | -           | -              | SMBus alert  |
-| P2    | GND                 | GND                       | -           | GND            | Ground       |
-| P3    | CSI1_CK+            | MIPI_CSI1_RX_CLK0P        | AJ31        | <из даташита>  | MIPI CSI-1   |
-| ...   | ...                 | ...                       | ...         | ...            | ...          |
+| P-Pin | SMARC Signal | Board Net / Function | RK3588 Ball | Voltage Domain | Notes       |
+| ----- | ------------ | -------------------- | ----------- | -------------- | ----------- |
+| P1    | SMB_ALERT#   | Test Point           | -           | -              | SMBus alert |
+| P2    | GND          | GND                  | -           | GND            | Ground      |
+| P3    | CSI1_CK+     | MIPI_CSI1_RX_CLK0P   | AJ31        | <из даташита>  | MIPI CSI-1  |
+| ...   | ...          | ...                  | ...         | ...            | ...         |
 ```
 
 Правила:
@@ -105,7 +105,7 @@ alwaysApply: true
 - В раздел `## Документация` добавь ссылку на локальный PDF:
 
 ```md
-- Datasheet несущей платы RK3588: `datasheet_IB_SM_RK_compressed.pdf` (см. каталог `docs/_sources`).
+- Datasheet несущей платы RK3588: [`datasheet_IB_SM_RK_compressed.pdf`] (/datasheets/datasheet_IB_SM_RK_compressed.pdf).
 ```
 
 - Если из Notes в даташите видно отсылки к другим документам (reference design, design guide), добавь их как `TODO: добавить ссылку на <название документа>`.
@@ -115,4 +115,7 @@ alwaysApply: true
 - Не меняй front matter в существующих файлах.
 - Не создавай новые файлы, работай только с тремя указанными.
 - Сохраняй Markdown-таблицы валидными (одинаковое количество `|` в строках, без лишних разрывов), чтобы `npm run build` продолжал проходить.
+
+```
+
 ```

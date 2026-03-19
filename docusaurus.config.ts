@@ -29,17 +29,29 @@ const config: Config = {
     locales: ["ru"],
   },
 
+  plugins: [
+    [
+      "@docusaurus/plugin-ideal-image",
+      {
+        quality: 70,
+        max: 1030, // max resized image's size.
+        min: 640, // min resized image's size. if original is lower, use that size.
+        steps: 2, // the max number of images generated between min and max (inclusive)
+        disableInDev: false,
+      },
+    ],
+  ],
+
   presets: [
     [
       "classic",
       {
         docs: {
           sidebarPath: "./sidebars.ts",
-          // '/' делает документацию главной страницей раздела /wiki
           routeBasePath: "/",
           editUrl: undefined,
         },
-        blog: false, // Блог отключен
+        blog: false,
         theme: {
           customCss: "./src/css/custom.css",
         },

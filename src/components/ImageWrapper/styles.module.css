@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.inner {
+  position: relative;
+  width: 100%;
+  height: 260px; /* дефолтная высота, можно переопределять через className или модификаторы */
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* модификаторы, если хочешь управлять fit через классы */
+.fitContain {
+  object-fit: contain;
+}
+
+.fitCover {
+  object-fit: cover;
+}
+
+.fitFill {
+  object-fit: fill;
+}
+
+.fitNone {
+  object-fit: none;
+}
+
+.fitScaleDown {
+  object-fit: scale-down;
+}
+
+/* пример другого размера, если захочешь переиспользовать */
+.h300 {
+  height: 300px;
+}
